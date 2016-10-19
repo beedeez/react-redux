@@ -1,4 +1,4 @@
-import { Component, createElement } from 'react'
+import { Component, createElement, PropTypes } from 'react'
 import storeShape from '../utils/storeShape'
 import shallowEqual from '../utils/shallowEqual'
 import wrapActionCreators from '../utils/wrapActionCreators'
@@ -31,6 +31,24 @@ function tryCatch(fn, ctx) {
 
 // Helps track hot reloading.
 let nextVersion = 0
+let routeStack = [];
+export const updateRouteStack = stack => routeStack = stack;
+export function connectForNative(mapStateToProps, mapDispatchToProps, mergeProps, options = {}) {
+	options.skipUpdatesCondition = (props, context) => {
+		if (routeStack && props && props.route && props.route.name !== routeStack[routeStack.length-1].name) {
+			return false;
+		}
+		if (routeStack && context && context.currentRoute && context.currentRoute.name !== routeStack[routeStack.length-1].name) {
+			return false;
+		}
+		if (routeStack && context && context.currentRoute && context.currentRoute.lessonId !== routeStack[routeStack.length-1].lessonId) {
+			return false;
+		}
+
+		return true;
+	};
+	return connect(mapStateToProps, mapDispatchToProps, mergeProps, options);
+};
 
 export default function connect(mapStateToProps, mapDispatchToProps, mergeProps, options = {}) {
   const shouldSubscribe = Boolean(mapStateToProps)
@@ -237,7 +255,8 @@ export default function connect(mapStateToProps, mapDispatchToProps, mergeProps,
       }
 
       handleChange() {
-        if (!this.unsubscribe) {
+        const skipUpdates = options.skipUpdatesCondition && !options.skipUpdatesCondition.call(this, this.props, this.context)
+        if (!this.unsubscribe || skipUpdates) {
           return
         }
 
@@ -343,7 +362,8 @@ export default function connect(mapStateToProps, mapDispatchToProps, mergeProps,
     Connect.displayName = connectDisplayName
     Connect.WrappedComponent = WrappedComponent
     Connect.contextTypes = {
-      store: storeShape
+      store: storeShape,
+			currentRoute: PropTypes.object
     }
     Connect.propTypes = {
       store: storeShape
