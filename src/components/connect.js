@@ -44,6 +44,10 @@ export function connectForNative(mapStateToProps, mapDispatchToProps, mergeProps
 		if (routeStack && context && context.currentRoute && context.currentRoute.lessonId !== routeStack[routeStack.length-1].lessonId) {
 			return false;
 		}
+		// Skip updates if tab is not inside an active route, unless, forced ny props
+		if (context.isInsideInactiveRoute && context.isInsideInactiveRoute(context.store, props)) {
+			return false;
+		}
 
 		return true;
 	};
