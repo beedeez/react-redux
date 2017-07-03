@@ -1,4 +1,4 @@
-import { PropTypes } from 'react-native'
+import { PropTypes } from 'prop-types'
 
 export default PropTypes.shape({
   subscribe: PropTypes.func.isRequired,

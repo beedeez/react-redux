@@ -1,6 +1,6 @@
 import expect from 'expect'
 import React, { Component } from 'react'
-import { PropTypes } from 'react-native'
+import { PropTypes } from 'prop-types'
 import TestUtils from 'react-addons-test-utils'
 import { createStore } from 'redux'
 import { Provider } from '../../src/index'
