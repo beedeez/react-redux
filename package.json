@@ -81,10 +81,10 @@
     "istanbul": "^0.3.17",
     "jsdom": "~5.4.3",
     "mocha": "^2.2.5",
+	"prop-types": "^15.5.9",
     "react": "^0.14.0",
     "react-addons-test-utils": "^0.14.0",
     "react-dom": "^0.14.0",
-	"prop-types": "^15.5.9",
     "redux": "^3.0.0",
     "rimraf": "^2.3.4",
     "webpack": "^1.11.0"
