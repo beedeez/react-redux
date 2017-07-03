@@ -7,7 +7,7 @@
 		exports["ReactRedux"] = factory(require("react"), require("redux"));
 	else
 		root["ReactRedux"] = factory(root["React"], root["Redux"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_20__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_22__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -59,11 +59,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.__esModule = true;
 	exports.nativeConnect = exports.updateRouteStack = exports.connect = exports.Provider = undefined;
 
-	var _Provider = __webpack_require__(5);
+	var _Provider = __webpack_require__(6);
 
 	var _Provider2 = _interopRequireDefault(_Provider);
 
-	var _connect = __webpack_require__(6);
+	var _connect = __webpack_require__(7);
 
 	var _connect2 = _interopRequireDefault(_connect);
 
@@ -76,9 +76,137 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+	/**
+	 * Copyright (c) 2015-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule react-native-implementation
+	 * @flow
+	 */
+	'use strict';
+
+	const invariant = __webpack_require__(21);
+
+	// Export React, plus some native additions.
+	const ReactNative = {
+	  // Components
+	  get AccessibilityInfo() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AccessibilityInfo\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ActivityIndicator() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ActivityIndicator\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ART() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ReactNativeART\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Button() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Button\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get DatePickerIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"DatePickerIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get DrawerLayoutAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"DrawerLayoutAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get FlatList() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"FlatList\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Image() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Image\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ImageEditor() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ImageEditor\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ImageStore() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ImageStore\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get KeyboardAvoidingView() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"KeyboardAvoidingView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ListView() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ListView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Modal() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Modal\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get NavigatorIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"NavigatorIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Picker() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Picker\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get PickerIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"PickerIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ProgressBarAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ProgressBarAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ProgressViewIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ProgressViewIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ScrollView() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ScrollView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get SectionList() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"SectionList\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get SegmentedControlIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"SegmentedControlIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Slider() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Slider\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get SnapshotViewIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"SnapshotViewIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Switch() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Switch\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get RefreshControl() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"RefreshControl\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get StatusBar() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"StatusBar\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get SwipeableListView() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"SwipeableListView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TabBarIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TabBarIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Text() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Text\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TextInput() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TextInput\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ToastAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ToastAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ToolbarAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ToolbarAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Touchable() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Touchable\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TouchableHighlight() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TouchableHighlight\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TouchableNativeFeedback() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TouchableNativeFeedback\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TouchableOpacity() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TouchableOpacity\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TouchableWithoutFeedback() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TouchableWithoutFeedback\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get View() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"View\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ViewPagerAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ViewPagerAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get VirtualizedList() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"VirtualizedList\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get WebView() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"WebView\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+
+	  // APIs
+	  get ActionSheetIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ActionSheetIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get AdSupportIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AdSupportIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Alert() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Alert\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get AlertIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AlertIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Animated() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Animated\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get AppRegistry() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AppRegistry\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get AppState() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AppState\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get AsyncStorage() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"AsyncStorage\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get BackAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"BackAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); }, // deprecated: use BackHandler instead
+	  get BackHandler() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"BackHandler\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get CameraRoll() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"CameraRoll\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Clipboard() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Clipboard\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get DatePickerAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"DatePickerAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get DeviceInfo() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"DeviceInfo\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Dimensions() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Dimensions\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Easing() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Easing\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get findNodeHandle() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ReactNative\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).findNodeHandle; },
+	  get I18nManager() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"I18nManager\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ImagePickerIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ImagePickerIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get InteractionManager() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"InteractionManager\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Keyboard() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Keyboard\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get LayoutAnimation() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"LayoutAnimation\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Linking() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Linking\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get NativeEventEmitter() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"NativeEventEmitter\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get NetInfo() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"NetInfo\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get PanResponder() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"PanResponder\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get PermissionsAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"PermissionsAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get PixelRatio() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"PixelRatio\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get PushNotificationIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"PushNotificationIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Settings() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Settings\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Share() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Share\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get StatusBarIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"StatusBarIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get StyleSheet() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"StyleSheet\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Systrace() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Systrace\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TimePickerAndroid() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TimePickerAndroid\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get TVEventHandler() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"TVEventHandler\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get UIManager() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"UIManager\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Vibration() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Vibration\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get VibrationIOS() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"VibrationIOS\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+
+	  // Plugins
+	  get DeviceEventEmitter() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"RCTDeviceEventEmitter\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get NativeAppEventEmitter() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"RCTNativeAppEventEmitter\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get NativeModules() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"NativeModules\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get Platform() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Platform\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get processColor() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"processColor\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get requireNativeComponent() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"requireNativeComponent\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get takeSnapshot() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"takeSnapshot\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+
+	  // Prop Types
+	  get ColorPropType() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ColorPropType\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get EdgeInsetsPropType() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"EdgeInsetsPropType\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get PointPropType() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"PointPropType\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+	  get ViewPropTypes() { return __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ViewPropTypes\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())); },
+
+	  // Deprecated
+	  get Navigator() {
+	    invariant(
+	      false,
+	      'Navigator is deprecated and has been removed from this package. It can now be installed ' +
+	      'and imported from `react-native-deprecated-custom-components` instead of `react-native`. ' +
+	      'Learn about alternative navigation solutions at http://facebook.github.io/react-native/docs/navigation.html'
+	    );
+	  }
+	};
+
+	module.exports = ReactNative;
+
 
 /***/ }),
 /* 2 */
@@ -88,12 +216,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.__esModule = true;
 
-	var _react = __webpack_require__(1);
+	var _reactNative = __webpack_require__(1);
 
-	exports["default"] = _react.PropTypes.shape({
-	  subscribe: _react.PropTypes.func.isRequired,
-	  dispatch: _react.PropTypes.func.isRequired,
-	  getState: _react.PropTypes.func.isRequired
+	exports["default"] = _reactNative.PropTypes.shape({
+	  subscribe: _reactNative.PropTypes.func.isRequired,
+	  dispatch: _reactNative.PropTypes.func.isRequired,
+	  getState: _reactNative.PropTypes.func.isRequired
 	});
 
 /***/ }),
@@ -130,7 +258,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(17);
+	var root = __webpack_require__(18);
 
 	/** Built-in value references. */
 	var Symbol = root.Symbol;
@@ -140,6 +268,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -147,7 +281,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.__esModule = true;
 	exports["default"] = undefined;
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(5);
+
+	var _reactNative = __webpack_require__(1);
 
 	var _storeShape = __webpack_require__(2);
 
@@ -215,14 +351,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Provider.propTypes = {
 	  store: _storeShape2["default"].isRequired,
-	  children: _react.PropTypes.element.isRequired
+	  children: _reactNative.PropTypes.element.isRequired
 	};
 	Provider.childContextTypes = {
 	  store: _storeShape2["default"].isRequired
 	};
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -235,17 +371,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.connectForNative = connectForNative;
 	exports["default"] = connect;
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(5);
+
+	var _reactNative = __webpack_require__(1);
 
 	var _storeShape = __webpack_require__(2);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _shallowEqual = __webpack_require__(7);
+	var _shallowEqual = __webpack_require__(8);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _wrapActionCreators = __webpack_require__(8);
+	var _wrapActionCreators = __webpack_require__(9);
 
 	var _wrapActionCreators2 = _interopRequireDefault(_wrapActionCreators);
 
@@ -253,15 +391,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _isPlainObject = __webpack_require__(19);
+	var _isPlainObject = __webpack_require__(20);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _hoistNonReactStatics = __webpack_require__(9);
+	var _hoistNonReactStatics = __webpack_require__(10);
 
 	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-	var _invariant = __webpack_require__(10);
+	var _invariant = __webpack_require__(11);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -628,8 +766,8 @@ return /******/ (function(modules) { // webpackBootstrap
 			Connect.WrappedComponent = WrappedComponent;
 			Connect.contextTypes = {
 				store: _storeShape2["default"],
-				currentRoute: _react.PropTypes.object,
-				isInsideInactiveRoute: _react.PropTypes.func
+				currentRoute: _reactNative.PropTypes.object,
+				isInsideInactiveRoute: _reactNative.PropTypes.func
 			};
 			Connect.propTypes = {
 				store: _storeShape2["default"]
@@ -653,7 +791,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -684,7 +822,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -692,7 +830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.__esModule = true;
 	exports["default"] = wrapActionCreators;
 
-	var _redux = __webpack_require__(20);
+	var _redux = __webpack_require__(22);
 
 	function wrapActionCreators(actionCreators) {
 	  return function (dispatch) {
@@ -701,7 +839,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 	/**
@@ -757,7 +895,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/**
@@ -814,12 +952,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Symbol = __webpack_require__(4),
-	    getRawTag = __webpack_require__(14),
-	    objectToString = __webpack_require__(15);
+	    getRawTag = __webpack_require__(15),
+	    objectToString = __webpack_require__(16);
 
 	/** `Object#toString` result references. */
 	var nullTag = '[object Null]',
@@ -848,7 +986,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -859,10 +997,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()) || Function('return this')()))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var overArg = __webpack_require__(16);
+	var overArg = __webpack_require__(17);
 
 	/** Built-in value references. */
 	var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -871,7 +1009,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Symbol = __webpack_require__(4);
@@ -923,7 +1061,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -951,7 +1089,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 	/**
@@ -972,10 +1110,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(12);
+	var freeGlobal = __webpack_require__(13);
 
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -987,7 +1125,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 	/**
@@ -1022,12 +1160,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var baseGetTag = __webpack_require__(11),
-	    getPrototype = __webpack_require__(13),
-	    isObjectLike = __webpack_require__(18);
+	var baseGetTag = __webpack_require__(12),
+	    getPrototype = __webpack_require__(14),
+	    isObjectLike = __webpack_require__(19);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -1090,10 +1228,70 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 20 */
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 */
+
+	'use strict';
+
+	/**
+	 * Use invariant() to assert state which your program assumes to be true.
+	 *
+	 * Provide sprintf-style format (only %s is supported) and arguments
+	 * to provide information about what broke and what you were
+	 * expecting.
+	 *
+	 * The invariant message will be stripped in production, but the invariant
+	 * will remain to ensure logic does not differ in production.
+	 */
+
+	var validateFormat = function validateFormat(format) {};
+
+	if (true) {
+	  validateFormat = function validateFormat(format) {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  };
+	}
+
+	function invariant(condition, format, a, b, c, d, e, f) {
+	  validateFormat(format);
+
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error(format.replace(/%s/g, function () {
+	        return args[argIndex++];
+	      }));
+	      error.name = 'Invariant Violation';
+	    }
+
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	}
+
+	module.exports = invariant;
+
+/***/ }),
+/* 22 */
 /***/ (function(module, exports) {
 
-	module.exports = __WEBPACK_EXTERNAL_MODULE_20__;
+	module.exports = __WEBPACK_EXTERNAL_MODULE_22__;
 
 /***/ })
 /******/ ])

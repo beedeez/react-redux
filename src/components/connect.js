@@ -1,4 +1,5 @@
-import { Component, createElement, PropTypes } from 'react'
+import { Component, createElement } from 'react'
+import { PropTypes } from 'react-native'
 import storeShape from '../utils/storeShape'
 import shallowEqual from '../utils/shallowEqual'
 import wrapActionCreators from '../utils/wrapActionCreators'
